@@ -1,0 +1,63 @@
+generated: '2026-09-06'
+method: probed
+source: live HTTPS probes of every host this record knows (acevisiongroup.com, www.acevisiongroup.com)
+note: >-
+  Recorded absence. Ace Vision Group serves no /.well-known/ documents. Every named
+  path on the corporate host returns a real HTTP 404 with the WordPress theme's
+  "Page Not Found" body — not a soft-200 shell. The www. hostname resolves to the
+  same origin but its TLS certificate does not include www.acevisiongroup.com as a
+  subject alternative name, so no probe could complete over HTTPS. No WellKnown or
+  SecurityTxt pointer is emitted, because nothing was served.
+hosts:
+- host: acevisiongroup.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.acevisiongroup.com
+  note: >-
+    TLS handshake fails - the certificate presented by 208.109.76.50 carries no
+    subject alternative name for www.acevisiongroup.com, so every probe aborted
+    before an HTTP status was returned.
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 0
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+    file: null
+  - path: /.well-known/api-catalog
+    status: 0
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 0
+    file: null
+excluded_hosts:
+- host: acevisiongroup.net
+  reason: >-
+    Not controlled by Ace Vision Group. The .net domain is a parked media.net
+    monetization page that answers HTTP 200 with an "Error. Page cannot be
+    displayed" HTML shell for every path probed, including /.well-known/agent.json
+    and /openapi.json. Excluded to avoid crediting the company with documents a
+    domain parker serves.

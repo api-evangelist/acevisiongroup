@@ -1,7 +1,16 @@
 aid: acevisiongroup
-name: Acevisiongroup
-description: 'Acevisiongroup is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Ace Vision Group
+description: 'Ace Vision Group, Inc. (AVG) is a Boston, Massachusetts based emerging
+  medical laser device company founded in 2006 by vision scientist AnnMarie Hipsley,
+  DPT, PhD. The company develops the VisioLite Er:YAG ophthalmic laser system and
+  Laser Scleral Microporation (LSM), a non-contact therapeutic procedure intended to
+  treat age-related eye dysfunction such as presbyopia by micro-porating the sclera
+  to restore the eye''s natural dynamic range of focus. The VisioLite system remains
+  under development and has not been approved or cleared for commercial sale in the
+  United States, European Union, United Kingdom or other jurisdictions. Ace Vision
+  Group publishes a four-page corporate website and operates no developer program,
+  public API, SDK or machine-readable interface of any kind.'
+image: https://acevisiongroup.com/app/uploads/2026/02/logo_color_wo_moto.png
 url: https://raw.githubusercontent.com/api-evangelist/acevisiongroup/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +21,13 @@ created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- Medical Devices
+- Ophthalmology
+- Healthcare
+- Lasers
+- Medical Technology
+- Life Sciences
+- Presbyopia
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +35,48 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/acevisiongroup-domain-security.yml
+- type: LLMsTxt
+  url: llms/acevisiongroup-llms.txt
 - type: Website
+  url: https://acevisiongroup.com/
+- type: About
+  url: https://acevisiongroup.com/about-us/
+- type: Features
+  url: https://acevisiongroup.com/technology/
+- type: Contact
+  url: https://acevisiongroup.com/contact-us/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ace-vision-group/
+- type: x-secondary-market-listing
   url: https://equityzen.com/company/acevisiongroup
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Ace Vision Group is a pre-commercial ophthalmic laser device manufacturer whose
+    entire public presence is a four-page WordPress brochure site (home, about,
+    technology, contact) with no developer section, no API reference and no
+    machine-readable contract at any host; its VisioLite Er:YAG laser is still under
+    development and not cleared for commercial sale, so the product is hardware, not
+    software.
+  evidence:
+  - url: https://acevisiongroup.com/
+    status: 200
+  - url: https://acevisiongroup.com/technology/
+    status: 200
+  - url: https://acevisiongroup.com/openapi.json
+    status: 404
+  - url: https://acevisiongroup.com/.well-known/agent-card.json
+    status: 404
+  - url: https://acevisiongroup.com/llms.txt
+    status: 404
+  - url: https://acevisiongroup.com/sitemap_index.xml
+    status: 200
+  checked: '2026-09-06'
